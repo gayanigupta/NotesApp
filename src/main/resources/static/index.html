@@ -1,0 +1,36 @@
+<!doctype html>
+<html ng-app="issuesApp">
+	<head>
+		<title>Github Angular Issues</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+    	<script src="../js/issues.js"></script>
+	</head>
+
+	<body>
+		<div ng-controller="githubIssues">
+			<table border="1">
+			<th>Issue Title</th>
+			<th>Body</th>
+			<th>User Login</th>
+			<th>Assignee Login</th>
+			
+			<tr ng-repeat="x in issues">
+			
+				<td>
+				{{x.title}}
+				</td>
+				<td>
+				{{x.body}}
+				</td>
+				<td>
+				{{x.user.login}}
+				</td>
+				<td>
+				{{x.assignee}}
+				</td>
+			</tr>
+			
+			</table>
+		</div>
+	</body>
+</html>
